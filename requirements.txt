@@ -1,6 +1,7 @@
 # Core dependencies for WER evaluation
 datasets>=2.14.0
 evaluate>=0.4.0
+jiwer>=3.0.0
 transformers>=4.36.0
 
 # Audio processing
