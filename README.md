@@ -83,9 +83,11 @@ If you want to evaluate a model directly without an API:
 python wer_evaluator.py \
     --dataset NeurologyAI/neuro-whisper-v1 \
     --split validation \
-    --model NeurologyAI/neuro-parakeet \
+    --model NeurologyAI/neuro-parakeet-mlx \
     --output results.json
 ```
+
+**📊 Tested Configuration**: This example uses the tested model [NeurologyAI/neuro-parakeet-mlx](https://huggingface.co/NeurologyAI/neuro-parakeet-mlx) evaluated on the [NeurologyAI/neuro-whisper-v1](https://huggingface.co/datasets/NeurologyAI/neuro-whisper-v1) dataset, achieving a WER of 1.04% on the validation split (5,289 samples).
 
 ### Quick Test with Limited Samples
 
