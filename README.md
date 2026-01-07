@@ -169,8 +169,8 @@ If you use this tool in your research, please cite:
 ```bibtex
 @software{medical_asr_evaluator,
   title = {Medical ASR Evaluator},
-  author = {Riedemann AI},
-  year = {2024},
+  author = {Riedemann, Lars},
+  year = {2026},
   url = {https://github.com/riedemannai/Medical_ASR_Evaluator}
 }
 ```
