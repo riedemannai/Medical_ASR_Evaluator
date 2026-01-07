@@ -23,11 +23,17 @@ import json
 import os
 import sys
 import time
+import warnings
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 from typing import List, Optional, Tuple
+
+# Suppress transformers warnings about missing ML frameworks when using API mode
+warnings.filterwarnings("ignore", message=".*PyTorch.*")
+warnings.filterwarnings("ignore", message=".*TensorFlow.*")
+warnings.filterwarnings("ignore", message=".*Flax.*")
 
 import evaluate
 import librosa
@@ -202,11 +208,24 @@ class WEREvaluator:
             return False
         
         try:
+            # Try health endpoint first
             health_response = requests.get(f"{self.api_url.rstrip('/')}/", timeout=10)
             health_response.raise_for_status()
             return True
-        except:
+        except requests.exceptions.ConnectionError:
             return False
+        except requests.exceptions.Timeout:
+            return False
+        except:
+            # If root endpoint doesn't work, try the transcriptions endpoint
+            try:
+                test_response = requests.get(f"{self.api_url.rstrip('/')}/v1/audio/transcriptions", timeout=5)
+                # Even if it returns an error, the endpoint exists
+                return True
+            except requests.exceptions.ConnectionError:
+                return False
+            except:
+                return False
     
     def evaluate(self, dataset_name: str, split: str = "validation", 
                  limit: Optional[int] = None, audio_column: str = "audio",
@@ -229,7 +248,11 @@ class WEREvaluator:
         if self.api_url:
             if not self.check_api_availability():
                 print(f"✗ API not available at {self.api_url}")
-                print(f"\nMake sure the ASR server is running.")
+                print(f"\nTroubleshooting:")
+                print(f"  1. Make sure the ASR server is running")
+                print(f"  2. Check that the server is accessible at {self.api_url}")
+                print(f"  3. Verify the server is listening on the correct port")
+                print(f"  4. Test the connection: curl {self.api_url}/")
                 sys.exit(1)
             print(f"✓ API is available at {self.api_url}")
         
