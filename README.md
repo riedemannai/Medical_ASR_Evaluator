@@ -54,11 +54,6 @@ cd Medical_ASR_Evaluator
 pip install -r requirements.txt
 ```
 
-**Note**: If you encounter an ImportError for `jiwer`, you can install it directly:
-```bash
-pip install jiwer
-```
-
 ## Usage
 
 ### Evaluate via API Endpoint
