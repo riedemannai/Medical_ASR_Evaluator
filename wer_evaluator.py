@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Word Error Rate (WER) Evaluation Tool
+Medical ASR Evaluator
 
-A standalone tool for evaluating Automatic Speech Recognition (ASR) models
-using Word Error Rate (WER) metric. Supports evaluation via API endpoints
-or direct model inference.
+A standalone tool for evaluating Automatic Speech Recognition (ASR) models,
+particularly optimized for medical/clinical speech recognition, using Word Error Rate (WER) metric.
+Supports evaluation via API endpoints or direct model inference.
 
 Usage:
     # Evaluate via API endpoint

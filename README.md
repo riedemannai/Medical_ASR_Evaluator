@@ -1,6 +1,6 @@
-# WER Evaluation Tool
+# Medical ASR Evaluator
 
-A standalone tool for evaluating Automatic Speech Recognition (ASR) models using Word Error Rate (WER) metric. This tool supports evaluation via API endpoints or direct HuggingFace model inference.
+A standalone tool for evaluating Automatic Speech Recognition (ASR) models, particularly optimized for medical/clinical speech recognition, using Word Error Rate (WER) metric. This tool supports evaluation via API endpoints or direct HuggingFace model inference.
 
 ## Features
 
@@ -15,7 +15,7 @@ A standalone tool for evaluating Automatic Speech Recognition (ASR) models using
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd wer-evaluation
+cd Medical_ASR_Evaluator
 
 # Install dependencies
 pip install -r requirements.txt
@@ -167,11 +167,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 If you use this tool in your research, please cite:
 
 ```bibtex
-@software{wer_evaluation,
-  title = {WER Evaluation Tool},
+@software{medical_asr_evaluator,
+  title = {Medical ASR Evaluator},
   author = {Your Name},
   year = {2024},
-  url = {https://github.com/yourusername/wer-evaluation}
+  url = {https://github.com/yourusername/Medical_ASR_Evaluator}
 }
 ```
 
