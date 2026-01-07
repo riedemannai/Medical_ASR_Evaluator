@@ -209,20 +209,6 @@ This normalization ensures fair comparison between predictions and references.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## CI/CD
-
-This repository uses GitHub Actions for continuous integration:
-
-- **CI Pipeline**: Runs on every push and pull request, testing across Python 3.8-3.11
-  - Code formatting checks (Black)
-  - Linting (flake8)
-  - Import validation
-  - Dependency security checks
-
-- **CD Pipeline**: Automatically builds and can publish to PyPI on releases
-
-See `.github/workflows/` for workflow definitions.
-
 ## Citation
 
 If you use this tool in your research, please cite:
