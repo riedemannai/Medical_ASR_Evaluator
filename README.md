@@ -14,6 +14,33 @@ A standalone tool for evaluating Automatic Speech Recognition (ASR) models, part
 
 ## Installation
 
+We recommend using a conda environment with Python 3.11 for optimal compatibility.
+
+### Using Conda (Recommended)
+
+```bash
+# Clone the repository
+git clone https://github.com/riedemannai/Medical_ASR_Evaluator.git
+cd Medical_ASR_Evaluator
+
+# Create and activate conda environment with Python 3.11
+conda create -n medical_asr_evaluator python=3.11 -y
+conda activate medical_asr_evaluator
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+Alternatively, you can use the provided `environment.yml` file:
+
+```bash
+# Create environment from file
+conda env create -f environment.yml
+conda activate medical_asr_evaluator
+```
+
+### Using pip (Alternative)
+
 ```bash
 # Clone the repository
 git clone https://github.com/riedemannai/Medical_ASR_Evaluator.git
@@ -153,8 +180,9 @@ This normalization ensures fair comparison between predictions and references.
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.8+ (Python 3.11 recommended)
 - See `requirements.txt` for package dependencies
+- We recommend using a conda environment with Python 3.11 for optimal compatibility
 
 ## License
 
