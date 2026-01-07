@@ -199,40 +199,6 @@ The tool automatically cleans text for WER computation by:
 
 This normalization ensures fair comparison between predictions and references.
 
-## Troubleshooting
-
-### PyTorch/TensorFlow/Flax Warnings
-
-If you see warnings like:
-```
-None of PyTorch, TensorFlow >= 2.0, or Flax have been found...
-```
-
-**This is normal when using API mode** - these warnings can be safely ignored. The tool only needs PyTorch/TensorFlow when using direct model inference (with `--model` flag). When using `--api-url`, the ML frameworks are not required.
-
-### API Not Available
-
-If you get an error:
-```
-✗ API not available at http://localhost:8002
-```
-
-**Solutions:**
-1. Make sure your ASR server is running
-2. Verify the server URL and port are correct
-3. Test the connection manually:
-   ```bash
-   curl http://localhost:8002/
-   ```
-4. Check that the server is listening on the correct interface (localhost vs 0.0.0.0)
-5. Ensure firewall settings allow connections to the port
-
-### Missing Dependencies
-
-If you encounter import errors:
-- For `jiwer`: `pip install jiwer`
-- For other dependencies: `pip install -r requirements.txt`
-
 ## Requirements
 
 - Python 3.8+ (Python 3.11 recommended)
