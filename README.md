@@ -14,7 +14,7 @@ A standalone tool for evaluating Automatic Speech Recognition (ASR) models, part
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/riedemannai/Medical_ASR_Evaluator.git
 cd Medical_ASR_Evaluator
 
 # Install dependencies
@@ -156,7 +156,7 @@ This normalization ensures fair comparison between predictions and references.
 
 ## License
 
-[Add your license here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
@@ -169,9 +169,9 @@ If you use this tool in your research, please cite:
 ```bibtex
 @software{medical_asr_evaluator,
   title = {Medical ASR Evaluator},
-  author = {Your Name},
+  author = {Riedemann AI},
   year = {2024},
-  url = {https://github.com/yourusername/Medical_ASR_Evaluator}
+  url = {https://github.com/riedemannai/Medical_ASR_Evaluator}
 }
 ```
 
