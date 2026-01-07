@@ -1,0 +1,18 @@
+# Core dependencies for WER evaluation
+datasets>=2.14.0
+evaluate>=0.4.0
+transformers>=4.36.0
+
+# Audio processing
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# Utilities
+numpy>=1.24.0
+requests>=2.31.0
+tqdm>=4.65.0
+
+# Optional: for GPU acceleration (if using direct model inference)
+# torch>=2.0.0
+# accelerate>=0.25.0
+
