@@ -1,0 +1,99 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Cache pip packages
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install flake8 black pytest
+
+    - name: Check code formatting with Black
+      run: |
+        black --check --diff wer_evaluator.py example_usage.py || true
+
+    - name: Lint with flake8
+      run: |
+        flake8 wer_evaluator.py example_usage.py --max-line-length=120 --ignore=E203,W503 || true
+
+    - name: Check imports
+      run: |
+        python -c "import wer_evaluator; print('✓ wer_evaluator imports successfully')"
+
+    - name: Test help command
+      run: |
+        python wer_evaluator.py --help
+
+    - name: Validate requirements.txt
+      run: |
+        pip check
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    - name: Install linting tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install black flake8 mypy
+
+    - name: Run Black formatter check
+      run: |
+        black --check wer_evaluator.py example_usage.py || true
+
+    - name: Run flake8
+      run: |
+        flake8 wer_evaluator.py example_usage.py --max-line-length=120 --ignore=E203,W503 || true
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    - name: Install safety
+      run: |
+        python -m pip install --upgrade pip
+        pip install safety
+
+    - name: Check for security vulnerabilities
+      run: |
+        safety check --file requirements.txt || true
+

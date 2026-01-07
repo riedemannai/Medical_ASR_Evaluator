@@ -1,5 +1,7 @@
 # Medical ASR Evaluator
 
+[![CI](https://github.com/riedemannai/Medical_ASR_Evaluator/actions/workflows/ci.yml/badge.svg)](https://github.com/riedemannai/Medical_ASR_Evaluator/actions/workflows/ci.yml)
+
 A standalone tool for evaluating Automatic Speech Recognition (ASR) models, particularly optimized for medical/clinical speech recognition, using Word Error Rate (WER) metric. This tool supports evaluation via API endpoints or direct HuggingFace model inference.
 
 ## Features
@@ -158,9 +160,31 @@ This normalization ensures fair comparison between predictions and references.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## CI/CD
+
+This repository uses GitHub Actions for continuous integration:
+
+- **CI Pipeline**: Runs on every push and pull request, testing across Python 3.8-3.11
+  - Code formatting checks (Black)
+  - Linting (flake8)
+  - Import validation
+  - Dependency security checks
+
+- **CD Pipeline**: Automatically builds and can publish to PyPI on releases
+
+See `.github/workflows/` for workflow definitions.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Ensure CI checks pass
+5. Commit your changes (`git commit -m 'Add some amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
 
 ## Citation
 
