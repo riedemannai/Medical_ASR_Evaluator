@@ -73,6 +73,8 @@ python wer_evaluator.py \
     --output results.json
 ```
 
+**💡 Suggested ASR Server**: For medical/clinical ASR evaluation, we recommend using [parakeet-mlx-server](https://github.com/riedemannai/parakeet-mlx-server) - an OpenAI-compatible FastAPI server optimized for German neurology and neuro-oncology audio transcription using Parakeet-MLX on Apple Silicon.
+
 ### Evaluate with HuggingFace Model Directly
 
 If you want to evaluate a model directly without an API:
@@ -176,6 +178,8 @@ The tool expects an OpenAI-compatible transcription API endpoint:
 - **Endpoint**: `POST /v1/audio/transcriptions`
 - **Request**: Multipart form data with `file` (audio file) and optional `model`, `language`, `response_format`
 - **Response**: JSON with `text` field containing the transcription
+
+**Recommended Server**: [parakeet-mlx-server](https://github.com/riedemannai/parakeet-mlx-server) - OpenAI-compatible FastAPI server for German neurology and neuro-oncology audio transcription, optimized for Apple Silicon M4.
 
 Example API request:
 ```python
