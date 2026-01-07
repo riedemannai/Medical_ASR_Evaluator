@@ -4,6 +4,10 @@
 
 A standalone tool for evaluating Automatic Speech Recognition (ASR) models, particularly optimized for medical/clinical speech recognition, using Word Error Rate (WER) metric. This tool supports evaluation via API endpoints or direct HuggingFace model inference.
 
+## Tags
+
+`asr` `speech-recognition` `medical-asr` `clinical-asr` `wer` `word-error-rate` `evaluation` `benchmarking` `huggingface` `audio-processing` `speech-to-text` `transcription` `medical-ai` `healthcare-ai` `nlp` `machine-learning` `python` `api-evaluation` `model-evaluation` `speech-evaluation` `audio-evaluation` `medical-transcription` `clinical-transcription` `openai-api` `parallel-processing` `performance-metrics`
+
 ## Features
 
 - **Flexible Evaluation**: Evaluate models via API endpoints or directly using HuggingFace models
