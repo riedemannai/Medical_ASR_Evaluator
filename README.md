@@ -137,6 +137,10 @@ The tool provides:
 
 ```
 ============================================================
+Computing Word Error Rate (WER)...
+============================================================
+
+============================================================
 EVALUATION RESULTS
 ============================================================
 
@@ -147,16 +151,18 @@ EVALUATION RESULTS
   Success rate: 100.00%
 
 ⏱️  Timing Statistics:
-  Total evaluation time: 1234.56s (20.58 min)
-  Total audio duration: 22680.00s (378.00 min, 6.30 hours)
-  Total inference time: 952.34s (15.87 min)
-  Average inference time per sample: 0.180s
-  Real-time factor (RTF): 0.042x
-  Processing rate: 4.28 samples/s
+  Total evaluation time: 953.26s (15.89 min)
+  Total audio duration: 22786.68s (379.78 min, 6.33 hours)
+  Total inference time: 944.00s (15.73 min)
+  Average inference time per sample: 0.178s
+  Real-time factor (RTF): 0.041x
+  Processing rate: 5.55 samples/s
 
 ============================================================
 🎯 Word Error Rate (WER): 1.04%
 ============================================================
+
+✓ Detailed results saved to: results.json
 ```
 
 ## API Compatibility
