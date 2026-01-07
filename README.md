@@ -1,4 +1,4 @@
-# Medical ASR Evaluator
+# 🎤🏥 Medical ASR Evaluator
 
 [![CI](https://github.com/riedemannai/Medical_ASR_Evaluator/actions/workflows/ci.yml/badge.svg)](https://github.com/riedemannai/Medical_ASR_Evaluator/actions/workflows/ci.yml)
 
